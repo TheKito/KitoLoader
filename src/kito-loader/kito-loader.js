@@ -51,5 +51,3 @@ window.kito = window.kito || {};
             })
     }
 });
-
-window.KitoLoader = window.kito.loader;
