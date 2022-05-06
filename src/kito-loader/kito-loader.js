@@ -1,4 +1,6 @@
-(window.KitoLoader = {
+"use strict";
+window.kito = window.kito || {};
+(window.kito.loader = {
 
     /**
      * Load Script
@@ -7,6 +9,7 @@
      */
     loadScript: function (src) {
         return new Promise((resolve, reject) => {
+            console.debug('KitoLoader', 'loadScript', src);
             const script = window.document.createElement('script');
             script.type = 'text/javascript';
             script.onload = resolve;
@@ -23,6 +26,7 @@
      */
     loadStyle: function (href) {
         return new Promise((resolve, reject) => {
+            console.debug('KitoLoader', 'loadStyle', href);
             const link = window.document.createElement('link');
             link.rel = 'stylesheet';
             link.onload = resolve;
@@ -38,6 +42,7 @@
      * @return Promise
      */
     loadHtml: function (href) {
+        console.debug('KitoLoader', 'loadHtml', href);
         return fetch(href).then((response) => response.text())
             .then((html) => {
                 const span = window.document.createElement('span');
@@ -47,3 +52,4 @@
     }
 });
 
+window.KitoLoader = window.kito.loader;
