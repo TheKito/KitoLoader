@@ -39,11 +39,11 @@
      */
     loadHtml: function (href) {
         return fetch(href).then((response) => response.text())
-                .then((html) => {
-                    const span = window.document.createElement('span');
-                    span.innerHTML = html;
-                    window.document.body.append(span);
-                })
+            .then((html) => {
+                const span = window.document.createElement('span');
+                span.innerHTML = html;
+                window.document.body.append(span);
+            })
     }
 });
 
