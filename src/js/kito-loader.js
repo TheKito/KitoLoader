@@ -58,7 +58,7 @@ window.kito = window.kito || {};
      */
     loadModule: function (href) {
         console.debug('KitoLoader', 'loadModule', href);
-        kito.loade.loadHtml(href + '/index.html').finally(function () {
+        kito.loader.loadHtml(href + '/index.html').finally(function () {
             kito.loader.loadStyle(href + '/index.css');
             kito.loader.loadScript(href + '/index.html');
         })
