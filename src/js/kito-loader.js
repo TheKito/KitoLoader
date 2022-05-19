@@ -60,7 +60,7 @@ window.kito = window.kito || {};
         console.debug('KitoLoader', 'loadModule', href);
         kito.loader.loadHtml(href + '/index.html').finally(function () {
             kito.loader.loadStyle(href + '/index.css');
-            kito.loader.loadScript(href + '/index.html');
+            kito.loader.loadScript(href + '/index.js');
         })
     }
 });
