@@ -58,9 +58,9 @@ window.kito = window.kito || {};
      */
     loadModule: function (href) {
         console.debug('KitoLoader', 'loadModule', href);
-        this.loadHtml(href + '/index.html').finally(function () {
-            this.loadStyle(href + '/index.css');
-            this.loadScript(href + '/index.html');
+        kito.loade.loadHtml(href + '/index.html').finally(function () {
+            kito.loader.loadStyle(href + '/index.css');
+            kito.loader.loadScript(href + '/index.html');
         })
     }
 });
