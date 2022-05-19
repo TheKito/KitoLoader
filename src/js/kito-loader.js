@@ -49,5 +49,19 @@ window.kito = window.kito || {};
                 span.innerHTML = html;
                 window.document.body.append(span);
             })
+    },
+
+    /**
+     * Load Module
+     * @param string href
+     * @return Promise
+     */
+    loadModule: function (href) {
+        console.debug('KitoLoader', 'loadModule', href);
+        this.loadHtml(href + '/index.html').finally(function () {
+            this.loadStyle(href + '/index.css');
+            this.loadScript(href + '/index.html');
+        })
     }
 });
+
