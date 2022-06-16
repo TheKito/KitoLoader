@@ -94,9 +94,9 @@ window.kito.location = (function () {
             initLocation();
             return this;
         },
-
         getLocation: function () {
             return location;
         }
     };
 })();
+
