@@ -57,11 +57,13 @@ window.kito = window.kito || {};
      * @return Promise
      */
     loadModule: function (href) {
-        console.debug('KitoLoader', 'loadModule', href);
-        kito.loader.loadHtml(href + '/index.html').finally(function () {
-            kito.loader.loadStyle(href + '/index.css');
-            kito.loader.loadScript(href + '/index.js');
-        })
+        return new Promise((resolve, reject) => {
+            console.debug('KitoLoader', 'loadModule', href);
+            kito.loader.loadHtml(href + '/index.html').finally(function () {
+                kito.loader.loadStyle(href + '/index.css');
+                kito.loader.loadScript(href + '/index.js').finally(resolve);
+            })
+        });
     }
 });
 
